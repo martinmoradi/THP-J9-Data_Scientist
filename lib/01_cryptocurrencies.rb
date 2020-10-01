@@ -11,11 +11,17 @@ devises = ["Bitcoin", "Ethereum", "XRP", "Bitcoin Cash", "EOS", "Litecoin", "Car
     end
     return cryptos
 end
+cryptos = crypto_currencies(devises, values)
 
-puts "#{crypto_currencies(devises, values)}"
+puts cryptos
 
 # La ou les crypto qui ont la plus grosse valeur.
 
+def largest_hash_value(cryptos)
+  cryptos.select {|k,v| v == cryptos.values.max }
+end
+
+puts "La ou les cryptos qui ont la plus grande valeur : #{largest_hash_value(cryptos)}"
 # La ou les crypto qui ont la plus petite valeur.
 
 # Les devises dont le cours est inférieur à 6000

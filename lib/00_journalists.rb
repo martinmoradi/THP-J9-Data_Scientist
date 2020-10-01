@@ -63,9 +63,7 @@ puts "L'élément @epenser est en position n°#{find_index(handles_twitter, "@ep
 
 def sort_handles(handles_twitter)
     counter = Hash.new(0)
-    handles_twitter.each do |handle|
-        counter[handle.length] += 1
-    end
+    handles_twitter.each { |handle| counter[handle.length] += 1 }
     return counter
 end
 

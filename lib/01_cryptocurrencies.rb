@@ -6,22 +6,21 @@ devises = ["Bitcoin", "Ethereum", "XRP", "Bitcoin Cash", "EOS", "Litecoin", "Car
 
  def crypto_currencies(devises, values)
     cryptos = Hash.new(0)
-    devises.each_with_index do |handle, idx|
-        cryptos[devises[idx]] = values[idx]
-    end
+    devises.each_with_index { |handle, idx| cryptos[devises[idx]] = values[idx] }
     return cryptos
 end
-cryptos = crypto_currencies(devises, values)
 
+cryptos = crypto_currencies(devises, values)
 puts cryptos
 
 # La ou les crypto qui ont la plus grosse valeur.
 
 def largest_hash_value(cryptos)
-  cryptos.select {|k,v| v == cryptos.values.max }
+  cryptos.select { |k,v| v == cryptos.values.max }
 end
 
 puts "La ou les cryptos qui ont la plus grande valeur : #{largest_hash_value(cryptos)}"
+
 # La ou les crypto qui ont la plus petite valeur.
 
 # Les devises dont le cours est inférieur à 6000
